@@ -1,0 +1,2 @@
+# Searching_algorithm_visualizer
+visualizing the searching algorithm
