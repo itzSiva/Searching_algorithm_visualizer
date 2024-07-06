@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search Visualizer</title>
+    <link rel="stylesheet" href="searchstyle.css">
+</head>
+<body>
+    <button id="backButton" onclick="window.location.href='index.html'">Back to Main Page</button>
+    <h1>Linear Search Visualizer</h1>
+    <br><br>
+    <div class="explanation-container">
+        <p>Linear Search is a simple search algorithm that checks every element in the list until the desired element is found or the list ends.</p>
+    </div>
+    <br>
+    <div class="controls">
+        <button id="startButton" onclick="showTargetInputModal()">Start Linear Search</button>
+        <button id="resetButton" onclick="resetArray()">Reset Array</button>
+        <button id="stopButton" onclick="stopSearching()">Stop Execution</button>
+        <button id="showCodeButton" onclick="showJavaCode()">Show Java Code</button>
+        <button id="showTimeComplexityButton" onclick="showTimeComplexity()">Show Time Complexity</button>
+    </div>
+    <div id="visualizer" class="array-container"></div>
+    <div id="description" class="description-container">Procedure Explanation.</div>
+    
+    <div id="javaCodeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <pre>
+public class LinearSearch {
+    public static int linearSearch(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+            </pre>
+        </div>
+    </div>
+    
+    <div id="timeComplexityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeTimeComplexityModal()">&times;</span>
+            <h3>Time Complexity:</h3>
+            <p>Best Case: O(1)</p>
+            <p>Average Case: O(n)</p>
+            <p>Worst Case: O(n)</p>
+        </div>
+    </div>
+    
+    <div id="targetInputModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeTargetInputModal()">&times;</span>
+            <h3>Enter Target Value</h3>
+            <input type="number" id="targetValue" class="input-box">
+            <button onclick="startLinearSearchFromModal()" class="solid-blue-button">Start Search</button>
+        </div>
+    </div>
+    
+    <script src="scripts/linear.js"></script>
+</body>
+</html>

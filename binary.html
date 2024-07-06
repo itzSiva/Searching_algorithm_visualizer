@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Visualizer</title>
+    <link rel="stylesheet" href="searchstyle.css">
+</head>
+<body>
+    <button id="backButton" onclick="window.location.href='index.html'">Back to Main Page</button>
+    <h1>Binary Search Visualizer</h1>
+    <br><br>
+    <div class="explanation-container">
+        <p>Binary Search is a more efficient search algorithm that repeatedly divides the search interval in half. It requires the list to be sorted.</p>
+    </div>
+    <br>
+    <div class="controls">
+        <button id="startButton" onclick="showTargetInputModal()">Start Binary Search</button>
+        <button id="resetButton" onclick="resetArray()">Reset Array</button>
+        <button id="stopButton" onclick="stopSearching()">Stop Execution</button>
+        <button id="showCodeButton" onclick="showJavaCode()">Show Java Code</button>
+        <button id="showTimeComplexityButton" onclick="showTimeComplexity()">Show Time Complexity</button>
+    </div>
+    <div id="visualizer" class="array-container"></div>
+    <div id="description" class="description-container">Procedure Explanation.</div>
+    
+    <div id="javaCodeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <pre>
+public class BinarySearch {
+    public static int binarySearch(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == target) {
+                return mid;
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
+}
+            </pre>
+        </div>
+    </div>
+    
+    <div id="timeComplexityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeTimeComplexityModal()">&times;</span>
+            <h3>Time Complexity:</h3>
+            <p>Best Case: O(1)</p>
+            <p>Average Case: O(log n)</p>
+            <p>Worst Case: O(log n)</p>
+        </div>
+    </div>
+    
+    <div id="targetInputModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeTargetInputModal()">&times;</span>
+            <h3>Enter Target Value</h3>
+            <input type="number" id="targetValue" class="input-box">
+            <button onclick="startBinarySearchFromModal()" class="solid-blue-button">Start Search</button>
+        </div>
+    </div>
+    
+    <script src="scripts/binary.js"></script>
+</body>
+</html>
