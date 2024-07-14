@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const array = [];
 const arraySize = 20;
-let animationDelay = 1500; // Increased delay to 1500ms
+let animationDelay = 1500; 
 let searchInProgress = false;
 let targetValue = 0;
 let targetIndex = -1;
@@ -13,7 +13,7 @@ function initializeArray() {
     for (let i = 0; i < arraySize; i++) {
         array.push(Math.floor(Math.random() * 100));
     }
-    array.sort((a, b) => a - b); // Ensure the array is sorted for binary search
+    array.sort((a, b) => a - b); 
     renderArray();
 }
 
