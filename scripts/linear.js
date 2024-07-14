@@ -24,7 +24,7 @@ function startLinearSearch() {
 }
 
 function resetArray() {
-    array = generateRandomArray(10, 1, 100); // Generates an array of 10 random integers between 1 and 100
+    array = generateRandomArray(10, 1, 100);
     displayArray();
     clearDescription();
 }
